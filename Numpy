@@ -1,0 +1,208 @@
+# npm install numpy   --> install numpy
+
+import numpy as np 
+
+# create numpy array
+
+arr = np.array([1,2,3])  #Output : [1,2,3]
+arr
+
+# Check numpy version
+
+print(np.__version__)
+
+# array type check
+
+print(type(arr))
+
+# another way to create numpy array
+
+x = np.array(42)
+
+x   # output 42
+
+# create 1D array
+
+array_1D= np.array([1,2,3,4])
+
+array_1D # output [1,2,3,4]
+
+# create 2D Array
+
+array_2D = np.array([[1,2],[3,4]])
+
+array_2D  # [[1,2],[3,4]]
+
+# create 3D array
+
+array_3D = np.array([[[1,2],[3,4]],[[1,2],[3,4]]])
+
+array_3D  #  output [[[1,2],[3,4]],[[1,2],[3,4]]]
+
+# find array dimension 
+
+a1 = np.array(42)
+a2 = np.array([1, 2, 3, 4, 5])
+a3 = np.array([[1, 2, 3], [4, 5, 6]])
+a4 = np.array([[[1, 2, 3], [4, 5, 6]], [[1, 2, 3], [4, 5, 6]]])
+
+print(a1.ndim)
+print(a2.ndim)
+print(a3.ndim)
+print(a4.ndim)
+
+
+# initaily muti-dimension array
+
+arr = np.array([1, 2, 3, 4], ndmin=6)
+arr.ndim # output 6 
+
+
+# Numpy indexing elements
+
+array_1D= np.array([1,2,3,4])
+
+array_2D = np.array([[1,2],[3,4]])
+
+array_3D = np.array([[[1,2],[3,4]],[[1,2],[3,4]]])
+
+
+print(array_1D[0])
+print(array_2D[0,1])
+print(array_3D[0,0,0])
+
+
+# some operations
+arr = np.array([1,2])
+print(arr[0]+arr[0])
+
+
+x_array = np.array([[[1, 2, 3], [4, 5, 6]], [[7, 8, 9], [10, 11, 12]]])
+
+print(x_array[0,0,1])
+print(x_array[-1,-1,-1])
+
+
+# Numpy array slicing 
+s_1Darray = np.array([1, 2, 3, 4, 5, 6, 7])
+s_2Darray = np.array([[1, 2, 3, 4, 5, 6, 7],[1, 2, 3, 4, 5, 6, 7]])
+s_3Darray=np.array([[[1, 2, 3, 4, 5, 6, 7],[1, 2, 3, 4, 5, 6, 7]],[[1, 2, 3, 4, 5, 6, 7],[1, 2, 3, 4, 5, 6, 7]]])
+
+
+print(s_1Darray[1:5])
+print(s_2Darray[:1,:1])
+print(s_3Darray[:1,:1,1:4])
+
+# increments 
+print(s_1Darray[: : 2])
+
+print(s_1Darray.dtype)
+
+
+# copy and view
+
+arr = np.array([1,2,3,4,5,6,7])
+x= arr.copy()
+x[0]=199
+print(arr)
+print(x)
+print()
+
+# View
+
+arr = np.array([1,2,3,4,5,6,7])
+x= arr.view()
+x[0]=199
+print(arr)
+print(x)
+
+
+array_1D= np.array([1,2,3,4])
+
+array_2D = np.array([[1,2],[3,4]])
+
+array_3D = np.array([[[1,2],[3,4]],[[1,2],[3,4]]])
+
+array_3D = np.array([[[[[1,2],[3,4]],[[1,2],[3,4]]],[[[1,2],[3,4]],[[1,2],[3,4]]]],[[[[1,2],[3,4]],[[1,2],[3,4]]],[[[1,2],[3,4]],[[1,2],[3,4]]]]])
+
+
+print(array_1D.shape)
+print(array_2D.shape)
+print(array_3D.ndim)
+
+
+# Reshaping 
+
+array_2D = np.array([[1,2],[3,4]])
+arr= array_2D.reshape(-1)
+
+print(arr)
+
+new_arr = arr.reshape(2,2)
+print(new_arr)
+
+
+
+# loop operation 
+array_1D= np.array([1,2,3,4])
+
+for i in array_1D:
+  print(i)
+
+
+#2D
+
+arr = np.array([[1, 2, 3], [4, 5, 6]])
+
+for x in arr:
+  for y in x:
+    print(y)
+
+# 3D
+arr = np.array([[[1, 2, 3], [4, 5, 6]], [[7, 8, 9], [10, 11, 12]]])
+
+for x in arr:
+  for y in x:
+    for z in y:
+      print(z)
+
+
+
+# Concat 
+
+arr1 = np.array([1, 2, 3])
+
+arr2 = np.array([4, 5, 6])
+
+arr = np.concatenate((arr1, arr2) ,axis=1) # axis=0
+
+print(arr)
+
+
+# spllit
+
+arr = np.array([1, 2, 3, 4, 5, 6])
+
+newarr = np.array_split(arr, 3)
+
+print(newarr)
+
+
+
+# Search 
+# where avilable searching elements
+
+arr = np.array([1, 2, 3, 4, 5, 4, 4])
+
+x = np.where(arr == 4)
+
+print(x)
+
+arr = np.array([1, 2, 3, 4, 5, 4, 4])
+
+print(np.sort(arr))
+
+
+
+
+
